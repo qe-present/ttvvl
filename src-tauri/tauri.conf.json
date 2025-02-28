@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "ttvvl",
+  "version": "0.1.0",
+  "identifier": "ttvvl",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "ttvvl",
+        "label": "main",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "title": "点位窗口",
+        "width": 400,
+        "height": 300,
+        "label": "marker-name",
+        "resizable": true,
+        "parent": "main",
+        "visible": false,
+        "url":"#/name",
+        "decorations": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
